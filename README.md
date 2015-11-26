@@ -24,5 +24,3 @@ action=getPaginatedAPIs&tenant=carbon.super&start=0&end=-1
 Note:
 
 The list is 0-based, so to get rows from offset 1, use start=0. To retrieve all rows, use end = -1.
-
-To install this 
