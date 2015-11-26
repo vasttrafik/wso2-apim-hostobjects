@@ -1,0 +1,28 @@
+<%
+var getPaginatedAPIs = function (tenantDomain,start,end) {
+    var list, i, length, api, result,
+            log = new Log(),
+            store = jagg.module("manager").getVTAPIStoreObj();
+
+    try {
+        result = store.getPaginatedAPIs(tenantDomain,String(start),String(end));
+		
+        if (log.isDebugEnabled()) {
+            log.debug("getPaginatedAPIs : " + stringify(result.apis));
+        }
+
+        return {
+            error:false,
+            result:result
+        };
+    } 
+	catch (e) {
+        log.error(e.message);
+		
+        return {
+            error:e,
+            result:null
+        };
+    }
+};
+%>

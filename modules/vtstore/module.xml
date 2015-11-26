@@ -1,0 +1,7 @@
+<module name="vtstore" namespace="ns" expose="true" xmlns="http://wso2.org/projects/jaggery/module.xml">    
+	<hostObject>
+            <className>org.vasttrafik.wso2.carbon.apimgt.hostobjects.VTAPIStoreHostObject</className>
+            <name>VTStore</name>
+        </hostObject>
+</module>
+
