@@ -3,7 +3,7 @@ Jaggery hostobjects for WSO2 store, used by developer portal API
 
 This project adds the following functionality to the WSO2 store API:
 
-1. Provides support for getting all API:s with status PROTOTYPED, PUBLISHED and BLOCKED in the same call, using pagination 
+1. Provides support for getting all API:s with status PROTOTYPED, PUBLISHED and DEPRECATED in the same call, using pagination 
 
 This is implemented as a new hostobject and modified jaggery files.
 
