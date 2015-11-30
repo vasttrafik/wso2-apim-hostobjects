@@ -95,9 +95,9 @@ var getVTAPIStoreObj = function() {
     if (user == null) {
         store = require('vtstore');
         var storeHostObj = new store.VTStore();
-        if(tenantDomain != null && tenantDomain != ""){
-            storeHostObj.loadRegistryOfTenant(tenantDomain);
-        }
+        //if(tenantDomain != null && tenantDomain != ""){
+        //    storeHostObj.loadRegistryOfTenant(tenantDomain);
+        //}
         return storeHostObj;
     } else {
         store = require('vtstore');
