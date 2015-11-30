@@ -166,8 +166,6 @@ public final class VTAPIStoreHostObject extends APIStoreHostObject {
 	}
 	
 	private static boolean shouldInclude(String loggedInUser, String status, String visibility) {
-		LOG.error("Logged in user=" + loggedInUser);
-		
 		if ("admin".equalsIgnoreCase(loggedInUser)) {
 			if (!"PUBLISHED".equalsIgnoreCase(status) && 
 				!"PROTOTYPED".equalsIgnoreCase(status) && 
