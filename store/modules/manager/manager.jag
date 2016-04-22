@@ -71,7 +71,7 @@ var getAdminCookie = function() {
 
 var getAPIStoreObj = function() {
 
-    var tenantDomain = request.getParameter("tenant");
+    var tenantDomain = jagg.getTenantDomain();
     var user = jagg.getUser();
     var store;
     if (user == null) {
@@ -95,14 +95,19 @@ var getVTAPIStoreObj = function() {
     if (user == null) {
         store = require('vtstore');
         var storeHostObj = new store.VTStore();
-        //if(tenantDomain != null && tenantDomain != ""){
-        //    storeHostObj.loadRegistryOfTenant(tenantDomain);
-        //}
         return storeHostObj;
     } else {
         store = require('vtstore');
         return new store.VTStore(user.username);
     }
+};
+
+var getAPIConsumerObj = function() {
+    var user = jagg.getUser();
+
+    var APIManagerFactory = Packages.org.wso2.carbon.apimgt.impl.APIManagerFactory;
+
+    return APIManagerFactory.getInstance().getAPIConsumer(user);
 };
 
 var loadTenantRegistry = function (tenantDomain) {
@@ -150,7 +155,7 @@ var getActiveTenantDomains=function(){
 
 	try {
 		tenantDomains = store.getActiveTenantDomains();
-
+        tenantDomains = parse(stringify(tenantDomains));
         if (log.isDebugEnabled()) {
             log.debug("isTenantMode : " + stringify(api));
         }
@@ -169,4 +174,10 @@ var getActiveTenantDomains=function(){
     }
 
 };
+
+var getUsageClient = function(){
+    var user = jagg.getUser();
+    return org.wso2.carbon.apimgt.usage.client.UsageClient.getClient(user);
+}
+
 %>

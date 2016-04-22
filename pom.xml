@@ -5,28 +5,35 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.vasttrafik.se.common</groupId>
     <artifactId>vt-portal-hostobjects</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>Västtrafik Developer Portal Hostobjects</name>
     <description>Västtrafik Developer Portal Hostobjects Maven Project</description>
     <packaging>jar</packaging>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<carbon.version>4.4.3</carbon.version>
+	    <apimgt.version>5.0.3</apimgt.version>
+	</properties>
 
     <dependencies>
 		<dependency>
-            <groupId>org.wso2.carbon</groupId>
+            <groupId>org.wso2.carbon.apimgt</groupId>
             <artifactId>org.wso2.carbon.apimgt.api</artifactId>
-            <version>1.2.3</version>
+            <version>${apimgt.version}</version>
             <scope>provided</scope>
         </dependency>
 		<dependency>
-            <groupId>org.wso2.carbon</groupId>
+            <groupId>org.wso2.carbon.apimgt</groupId>
             <artifactId>org.wso2.carbon.apimgt.impl</artifactId>
-            <version>1.2.3</version>
+            <version>${apimgt.version}</version>
             <scope>provided</scope>
         </dependency>
 		<dependency>
-            <groupId>org.wso2.carbon</groupId>
+            <groupId>org.wso2.carbon.apimgt</groupId>
             <artifactId>org.wso2.carbon.apimgt.hostobjects</artifactId>
-            <version>1.2.3</version>
+            <version>${apimgt.version}</version>
             <scope>provided</scope>
         </dependency>
 		<dependency>
@@ -38,25 +45,25 @@
 		<dependency>
             <groupId>org.jaggeryjs</groupId>
             <artifactId>org.jaggeryjs.scriptengine</artifactId>
-			<version>0.9.0</version>
+			<version>0.12.0</version>
 			<scope>provided</scope>
         </dependency>
 		<dependency>
 			<groupId>org.wso2.carbon</groupId>
 			<artifactId>org.wso2.carbon.base</artifactId>
-			<version>4.2.0</version>
+			<version>${carbon.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.wso2.carbon</groupId>
 			<artifactId>org.wso2.carbon.core</artifactId>
-			<version>4.2.0</version>
+			<version>${carbon.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.wso2.carbon</groupId>
 			<artifactId>org.wso2.carbon.logging</artifactId>
-			<version>4.2.0</version>
+			<version>${carbon.version}</version>
 			<scope>provided</scope>
 		</dependency>
     </dependencies>
